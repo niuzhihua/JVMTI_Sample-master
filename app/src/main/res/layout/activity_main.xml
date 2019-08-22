@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/set_field"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="set_field" />
+
+                <Button
+                    android:id="@+id/field_Modifi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Field_Modifi" />
+
+                <Button
+                    android:id="@+id/field_Access"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Field_Access" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="setBreakPoints"
+                    android:text="设置breakPointslistner" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="checkBreakPoints"
+                    android:text="检测listner" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="10dp"
+                android:text="ObjectFree事件只有在对象被设置tag并被回收后 才触发。\n Events are only sent for tagged objects" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/set_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="给对象setTag" />
+
+                <Button
+                    android:id="@+id/button_gc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="触发 GC(监听gc)" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/thread"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="监听线程创建和结束" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="10dp"
+                android:text="  java 方法进入 和退出监听 见native-lib.cpp\n callbacks.MethodEntry = My_Method_Entry_Listener \n callbacks.MethodExit = My_Method_Exit_Listener;" />
+
+            <Button
+                android:id="@+id/button_modify_class"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="修改 Activity Class(未实现)" />
+
+            <Button
+                android:id="@+id/exception_catch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="java层异常捕获" />
+
+            <Button
+                android:id="@+id/count_instance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="统计对象(本页面Button)数量" />
+
+            <Button
+                android:id="@+id/get_obj_hashcode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="获取对象hashcode" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="open_leakactivity"
+                android:text="打开leak activity" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="registSigHanlder"
+                android:text="注册信号处理函数" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="testSigHanlder"
+                android:text="test native crash" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
